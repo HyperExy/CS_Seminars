@@ -41,4 +41,17 @@ else
 
 Console.WriteLine($"max = {max}");
 */
+//Задача 3
+/*int num;
 
+Console.WriteLine("Enter the number:");
+
+num = Convert.ToInt32(Console.ReadLine());
+
+if(num%2 == 0 && num != 0)
+    Console.WriteLine($"{num} - четное");
+else if(num%2 == 1)
+    Console.WriteLine($"{num} - нечетное");
+    else 
+        Console.WriteLine($"{num} - ноль");
+*/
