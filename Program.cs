@@ -20,6 +20,25 @@ else if(a<b)
 }
 else Console.WriteLine("Numbers are equals");
 */
+//Задача 2
+/*int a, b, c, max;
 
+Console.WriteLine("Enter three numbers:");
 
+a = Convert.ToInt32(Console.ReadLine());
+b = Convert.ToInt32(Console.ReadLine());
+c = Convert.ToInt32(Console.ReadLine());
+
+max = a;
+
+if(b>max)
+    if(b>c)
+        max = b;
+    else max = c;
+else 
+    if(c>max)
+        max = c;
+
+Console.WriteLine($"max = {max}");
+*/
 
