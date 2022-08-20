@@ -20,6 +20,7 @@ else if(a<b)
 }
 else Console.WriteLine("Numbers are equals");
 */
+
 //Задача 2
 /*int a, b, c, max;
 
@@ -41,6 +42,7 @@ else
 
 Console.WriteLine($"max = {max}");
 */
+
 //Задача 3
 /*int num;
 
@@ -54,4 +56,22 @@ else if(num%2 == 1)
     Console.WriteLine($"{num} - нечетное");
     else 
         Console.WriteLine($"{num} - ноль");
+*/
+
+//Задача 3
+/*int N, current = 1;
+
+Console.WriteLine("Enter the positive number:");
+
+N = Convert.ToInt32(Console.ReadLine());
+
+while(current <= N)
+{
+    if(current%2 == 0)
+        if(current == 2)
+        Console.Write($"{current}");
+        else
+        Console.Write($", {current}");
+    current++;
+}
 */
