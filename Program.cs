@@ -12,7 +12,8 @@ num = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine($"2nd number of {num} is {SecondNumber(num)}:");
 */
-int ThirdNumber(int number)
+//Задача 2
+/*int ThirdNumber(int number)
 {
     int temp = -1;
 while(number > 99)
@@ -35,5 +36,19 @@ if(num == -1)
     Console.WriteLine("No third number");
 else
     Console.WriteLine($"Third number of {num} is {num1}");
+*/
+//Задача 3
+/*void IsWeekend(int number)
+{
+    if(number == 6 || number == 7)
+    Console.WriteLine("Its a weekend");
+    else
+    Console.WriteLine("Its not a weekend");
+}
+int num;
 
+Console.WriteLine("Enter the number:");
 
+num = Convert.ToInt32(Console.ReadLine());
+IsWeekend(num);
+*/
