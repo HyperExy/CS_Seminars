@@ -1,4 +1,5 @@
-﻿void isPolyndrome(int number)
+﻿//Задача 1
+/*void isPolyndrome(int number)
 {
     int output = number;
     int size = 0;
@@ -41,3 +42,26 @@ Console.WriteLine("Enter the number:");
 num = Convert.ToInt32(Console.ReadLine());
 
 isPolyndrome(num);
+*/
+double dist(int fx1, int fy1, int fz1, int fx2, int fy2, int fz2)
+{
+    double distance = Math.Sqrt(Math.Pow(fx2 - fx1, 2) + Math.Pow(fy2 - fy1, 2) + Math.Pow(fz2 - fz1, 2));
+    return distance; 
+}
+
+int x1, y1, z1, x2, y2, z2;
+
+Console.WriteLine("Enter the x1:");
+x1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the y1:");
+y1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the z1:");
+z1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the x2:");
+x2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the y2:");
+y2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the z2:");
+z2 = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine($"Distance is : {dist(x1, y1, z1, x2, y2, z2)}");
