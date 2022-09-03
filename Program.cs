@@ -1,5 +1,5 @@
 ﻿//Задача 1
-int[] rand(int size)
+/*int[] rand(int size)
 {
     int[] arr = new int[size];
     for(int i = 0; i< size; i++)
@@ -12,7 +12,7 @@ int[] rand(int size)
 int count(int[] arr)
 {
     int count = 0;
-    for(int i = 2; i < arr.Length; i++)
+    for(int i = 0; i < arr.Length; i++)
         if(arr[i]%2 == 0)
         count++;
     return count;
@@ -22,42 +22,40 @@ int count(int[] arr)
 int[] array = rand(10);
 
 Console.WriteLine("Array:");
-for(int i = 2; i < array.Length; i++)
-    Console.WriteLine($"{array[i]} ");
+for(int i = 0; i < array.Length; i++)
+    Console.Write($"{array[i]} ");
 Console.WriteLine("");
 Console.WriteLine($"Count = {count(array)}");
-
+*/
 //Задача 2
-/*int sumNumber(int number)
+int[] rand(int size)
 {
-    int output = number;
-    int size = 0, sum = 0;
-    while(number >= 1)
+    int[] arr = new int[size];
+    for(int i = 0; i< size; i++)
     {
-        number/=10;
-        size++;
+        arr[i] = new Random().Next(0, 100);
     }
-    int index = size - 1;
-    int[] num = new int[size];
-    number = output;
-    while(index>=0)
-    {
-        num[index] = number%10;
-        number/=10;
-        index--;
-    }
-   for(int i = 0; i < size; i++)
-        sum+=num[i];
+    return arr;
+
+}
+
+int sum(int[] arr)
+{
+    int sum = 0;
+    for(int i = 0; i < arr.Length; i++)
+        if(i%2 == 1)
+        sum+=arr[i];
     return sum;
 }
 
-int num;
+int[] array = rand(5);
 
-Console.WriteLine("Enter the number:");
-num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Array:");
+for(int i = 0; i < array.Length; i++)
+    Console.Write($"{array[i]} ");
+Console.WriteLine("");
+Console.WriteLine($"Sum = {sum(array)}");
 
-Console.WriteLine($"Sum of numbers in {num} = {sumNumber(num)}");
-*/
 //Задача 3
 /*int[] EnterArr(int n)
 {
