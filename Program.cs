@@ -1,20 +1,32 @@
 ﻿//Задача 1
-/*int  degree(int num1,int num2)
+int[] rand(int size)
 {
-    int result = num1;
-    for(int i = 2; i <= num2; i++)
-        result *= num1;
-    return result;
+    int[] arr = new int[size];
+    for(int i = 0; i< size; i++)
+    {
+        arr[i] = new Random().Next(100, 1000);
+    }
+    return arr;
+
 }
-int A, B;
+int count(int[] arr)
+{
+    int count = 0;
+    for(int i = 2; i < arr.Length; i++)
+        if(arr[i]%2 == 0)
+        count++;
+    return count;
+}
 
-Console.WriteLine("Enter A:");
-A = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter B:");
-B = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"{A} in degree of {B} is {degree(A, B)}");
-*/
+int[] array = rand(10);
+
+Console.WriteLine("Array:");
+for(int i = 2; i < array.Length; i++)
+    Console.WriteLine($"{array[i]} ");
+Console.WriteLine("");
+Console.WriteLine($"Count = {count(array)}");
+
 //Задача 2
 /*int sumNumber(int number)
 {
