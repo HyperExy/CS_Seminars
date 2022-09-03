@@ -1,5 +1,6 @@
 ﻿//Задача 1
-/*int[] rand(int size)
+/*
+int[] rand(int size)
 {
     int[] arr = new int[size];
     for(int i = 0; i< size; i++)
@@ -28,6 +29,7 @@ Console.WriteLine("");
 Console.WriteLine($"Count = {count(array)}");
 */
 //Задача 2
+/*
 int[] rand(int size)
 {
     int[] arr = new int[size];
@@ -55,38 +57,45 @@ for(int i = 0; i < array.Length; i++)
     Console.Write($"{array[i]} ");
 Console.WriteLine("");
 Console.WriteLine($"Sum = {sum(array)}");
-
+*/
 //Задача 3
-/*int[] EnterArr(int n)
+/*
+double[] rand(int size)
 {
-    int[] arr = new int[n];
-    for(int i = 0; i < arr.Length; i++)
-        {
-            Console.WriteLine($"Enter the [{i+1}] number of array:");
-            arr[i] = Convert.ToInt32(Console.ReadLine());
-        }
+    double[] arr = new double[size];
+    for(int i = 0; i< size; i++)
+    {
+        arr[i] = new Random().Next(0, 100) + new Random().NextDouble();
+    }
     return arr;
+
 }
 
-void ShowArr(int[] arr)
+double min(double[] arr)
 {
-    Console.Write("[");
-    for(int i = 0; i < arr.Length; i++)
-        {
-            if(i==arr.Length-1)
-                Console.Write($"{arr[i]}");
-            else
-                Console.Write($"{arr[i]}, ");
-        }
-    Console.Write("]");
+    double min = arr[0];
+    for(int i = 1; i < arr.Length; i++)
+            if(min > arr[i])
+                min = arr[i];
+    return min;
 }
 
-int size;
 
-Console.WriteLine("Enter the size of array:");
-size = Convert.ToInt32(Console.ReadLine());
+double max(double[] arr)
+{
+    double max = arr[0];
+    for(int i = 1; i < arr.Length; i++)
+            if(max < arr[i])
+                max = arr[i];
+    return max;
+}
 
-int[] array = EnterArr(size);
+double[] array = rand(10);
 
-ShowArr(array);
+Console.WriteLine("Array:");
+for(int i = 0; i < array.Length; i++)
+    Console.Write($"{array[i]} ");
+Console.WriteLine("");
+
+Console.WriteLine($"Diff = {max(array)-min(array)}");
 */
