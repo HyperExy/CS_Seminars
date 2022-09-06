@@ -1,4 +1,5 @@
 ﻿//Задача 1
+/*
 int count(int[] arr)
 {
     int count = 0;
@@ -19,75 +20,32 @@ for(int i = 0; i < array.Length; i++)
         }
 Console.WriteLine("");
 Console.WriteLine($"Count = {count(array)}");
-
+*/
 //Задача 2
 /*
-int[] rand(int size)
+double CoordinateX(double b1, double b2, double k1, double k2)
 {
-    int[] arr = new int[size];
-    for(int i = 0; i< size; i++)
-    {
-        arr[i] = new Random().Next(0, 100);
-    }
-    return arr;
-
+    double x = (b2 - b1)/(k1-k2);
+    return x;
 }
 
-int sum(int[] arr)
+double CoordinateY(double b1, double k1, double x)
 {
-    int sum = 0;
-    for(int i = 0; i < arr.Length; i++)
-        if(i%2 == 1)
-        sum+=arr[i];
-    return sum;
+    double y = k1 * x + b1;
+    return y;
 }
+double b1, b2, k1, k2;
 
-int[] array = rand(5);
-
-Console.WriteLine("Array:");
-for(int i = 0; i < array.Length; i++)
-    Console.Write($"{array[i]} ");
-Console.WriteLine("");
-Console.WriteLine($"Sum = {sum(array)}");
-*/
-//Задача 3
-/*
-double[] rand(int size)
-{
-    double[] arr = new double[size];
-    for(int i = 0; i< size; i++)
-    {
-        arr[i] = new Random().Next(0, 100) + new Random().NextDouble();
-    }
-    return arr;
-
-}
-
-double min(double[] arr)
-{
-    double min = arr[0];
-    for(int i = 1; i < arr.Length; i++)
-            if(min > arr[i])
-                min = arr[i];
-    return min;
-}
-
-
-double max(double[] arr)
-{
-    double max = arr[0];
-    for(int i = 1; i < arr.Length; i++)
-            if(max < arr[i])
-                max = arr[i];
-    return max;
-}
-
-double[] array = rand(10);
-
-Console.WriteLine("Array:");
-for(int i = 0; i < array.Length; i++)
-    Console.Write($"{array[i]} ");
-Console.WriteLine("");
-
-Console.WriteLine($"Diff = {max(array)-min(array)}");
+Console.WriteLine("Enter the b1:");
+   b1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter the k1:");
+   k1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter the b2:");
+   b2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter the k2:");
+   k2 = Convert.ToDouble(Console.ReadLine());
+double X = CoordinateX(b1, b2, k1, k2);
+double Y = CoordinateY(b1, k1, X);
+Console.Write("Coordinate: ");
+Console.WriteLine($"({X}, {Y})");
 */
