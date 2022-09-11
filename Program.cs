@@ -63,3 +63,44 @@ Console.WriteLine("Enter the k1:");
 
 FindByIndex(I1, I2, matrix);
 */
+//Задача 3
+/*
+int[,] CreateMatrix(int m, int n)
+{
+    int[,] matrix = new int[m, n];
+    for(int i = 0; i < matrix.GetLength(0); i++)
+        for(int j = 0; j < matrix.GetLength(1); j++)
+            matrix[j, i] = new Random().Next(10, 100);
+    return matrix;
+}
+
+double[] Average(int[,] matrix)
+{  
+    double[] avg = new double[matrix.GetLength(1)];
+    for(int i = 0; i < matrix.GetLength(1); i++)
+        {
+            avg[i] = 0;
+            for(int j = 0; j < matrix.GetLength(0); j++)
+                avg[i] += matrix[j, i];
+            avg[i]/=matrix.GetLength(1);
+        }
+    return avg;
+
+}
+
+int[,] matrix = CreateMatrix(5, 5);
+double[] average = Average(matrix);
+for(int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix.GetLength(1); j++)
+        {
+        Console.Write($"{matrix[i, j]} ");
+        }
+    Console.WriteLine("");
+    }
+    Console.WriteLine("Averages is");
+for(int i = 0; i < matrix.GetLength(1); i++)
+    {
+        Console.Write($"{average[i]} ");
+    }
+*/
