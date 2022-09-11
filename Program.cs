@@ -1,5 +1,5 @@
 ﻿//Задача 1
-
+/*
 double[,] CreateMatrix(int m, int n)
 {
     double[,] matrix = new double[m, n];
@@ -23,32 +23,43 @@ for(int i = 0; i < N; i++)
         }
     Console.WriteLine("");
     }
-
+*/
 //Задача 2
 /*
-double CoordinateX(double b1, double b2, double k1, double k2)
+int[,] CreateMatrix(int m, int n)
 {
-    double x = (b2 - b1)/(k1-k2);
-    return x;
+    int[,] matrix = new int[m, n];
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < m; j++)
+        matrix[i, j] = new Random().Next(10, 100);
+    return matrix;
 }
 
-double CoordinateY(double b1, double k1, double x)
-{
-    double y = k1 * x + b1;
-    return y;
-}
-double b1, b2, k1, k2;
+void FindByIndex(int num1, int num2, int[,] matrix)
+{ 
+    if(num1 >= matrix.GetLength(0)||num2 >= matrix.GetLength(1)||num1 < 0 || num2 < 0)
+        Console.WriteLine("Incorrect index");
+    else 
+       Console.WriteLine($"{matrix[num1, num2]}");;
+   
 
-Console.WriteLine("Enter the b1:");
-   b1 = Convert.ToDouble(Console.ReadLine());
+}
+int I1, I2;
+int[,] matrix = CreateMatrix(5, 5);
+
+for(int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix.GetLength(1); j++)
+        {
+        Console.Write($"{matrix[i, j]} ");
+        }
+    Console.WriteLine("");
+    }
+
+Console.WriteLine("Enter the first index:");
+   I1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter the k1:");
-   k1 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Enter the b2:");
-   b2 = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Enter the k2:");
-   k2 = Convert.ToDouble(Console.ReadLine());
-double X = CoordinateX(b1, b2, k1, k2);
-double Y = CoordinateY(b1, k1, X);
-Console.Write("Coordinate: ");
-Console.WriteLine($"({X}, {Y})");
+   I2 = Convert.ToInt32(Console.ReadLine());
+
+FindByIndex(I1, I2, matrix);
 */
