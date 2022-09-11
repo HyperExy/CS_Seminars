@@ -1,26 +1,29 @@
 ﻿//Задача 1
-/*
-int count(int[] arr)
+
+double[,] CreateMatrix(int m, int n)
 {
-    int count = 0;
-    for(int i = 0; i < arr.Length; i++)
-        if(arr[i] > 0)
-        count++;
-    return count;
+    double[,] matrix = new double[m, n];
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < m; j++)
+        matrix[i, j] = new Random().Next(10, 100) + new Random().NextDouble() ;
+    return matrix;
 }
-Console.WriteLine("Enter the size:");
+
+Console.WriteLine("Enter the size m:");
     int M = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the size n:");
+    int N = Convert.ToInt32(Console.ReadLine());
+double[,] matrix = CreateMatrix(M, N);
 
-int[] array = new int[M];
-
-for(int i = 0; i < array.Length; i++)
+for(int i = 0; i < N; i++)
+    {
+        for(int j = 0; j < M; j++)
         {
-        Console.WriteLine($"Enter the [{i}] element");
-        array[i] = Convert.ToInt32(Console.ReadLine());
+        Console.Write($"{matrix[i, j]} ");
         }
-Console.WriteLine("");
-Console.WriteLine($"Count = {count(array)}");
-*/
+    Console.WriteLine("");
+    }
+
 //Задача 2
 /*
 double CoordinateX(double b1, double b2, double k1, double k2)
