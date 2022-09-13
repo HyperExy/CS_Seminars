@@ -57,7 +57,7 @@ for(int i = 0; i < N; i++)
     }
 */
 //Задача 2
-
+/*
 int[,] CreateMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
@@ -104,46 +104,65 @@ for(int i = 0; i < matrix.GetLength(0); i++)
     }
 
 Console.WriteLine($"Number of line with min element: {FindMin(LineSum(matrix)) + 1}");
-
+*/
 
 //Задача 3
-/*
+
 int[,] CreateMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
     for(int i = 0; i < matrix.GetLength(0); i++)
         for(int j = 0; j < matrix.GetLength(1); j++)
-            matrix[j, i] = new Random().Next(10, 100);
+            matrix[j, i] = new Random().Next(0, 10);
     return matrix;
 }
 
-double[] Average(int[,] matrix)
+int[,] MatrixXmatrix(int[,] matrix1, int[,] matrix2)
 {  
-    double[] avg = new double[matrix.GetLength(1)];
-    for(int i = 0; i < matrix.GetLength(1); i++)
-        {
-            avg[i] = 0;
-            for(int j = 0; j < matrix.GetLength(0); j++)
-                avg[i] += matrix[j, i];
-            avg[i]/=matrix.GetLength(1);
-        }
-    return avg;
+    int[,] result = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
 
+    for(int i = 0; i < matrix1.GetLength(0); i++)
+        {
+            for(int j = 0; j < matrix2.GetLength(1); j++)
+             {
+                for(int n = 0; n < matrix1.GetLength(1); n++)
+                {
+                    result[i,j] += matrix1[i, n] * matrix2[n,j];
+                }
+             }
+        }
+    return result;
 }
 
-int[,] matrix = CreateMatrix(5, 5);
-double[] average = Average(matrix);
-for(int i = 0; i < matrix.GetLength(0); i++)
+int[,] matrix1 = CreateMatrix(3, 3);
+int[,] matrix2 = CreateMatrix(3, 3);
+    Console.WriteLine("First matrix");
+    for(int i = 0; i < matrix1.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++)
+        for(int j = 0; j < matrix1.GetLength(1); j++)
         {
-        Console.Write($"{matrix[i, j]} ");
+        Console.Write($"{matrix1[i, j]} ");
         }
     Console.WriteLine("");
     }
-    Console.WriteLine("Averages is");
-for(int i = 0; i < matrix.GetLength(1); i++)
+    Console.WriteLine("Second matrix");
+    for(int i = 0; i < matrix2.GetLength(0); i++)
     {
-        Console.Write($"{average[i]} ");
+        for(int j = 0; j < matrix2.GetLength(1); j++)
+        {
+        Console.Write($"{matrix2[i, j]} ");
+        }
+    Console.WriteLine("");
     }
-*/
+
+int[,] result = MatrixXmatrix(matrix1, matrix2);
+
+    Console.WriteLine("Result is");
+    for(int i = 0; i < result.GetLength(0); i++)
+    {
+        for(int j = 0; j < result.GetLength(1); j++)
+        {
+        Console.Write($"{result[i, j]} ");
+        }
+    Console.WriteLine("");
+    }
