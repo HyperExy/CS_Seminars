@@ -1,5 +1,5 @@
 ﻿//Задача 1
-
+/*
 int[,] CreateMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
@@ -55,29 +55,44 @@ for(int i = 0; i < N; i++)
         }
     Console.WriteLine("");
     }
-
+*/
 //Задача 2
-/*
+
 int[,] CreateMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < m; j++)
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
         matrix[i, j] = new Random().Next(10, 100);
     return matrix;
 }
 
-void FindByIndex(int num1, int num2, int[,] matrix)
+int[] LineSum(int[,] matrix)
 { 
-    if(num1 >= matrix.GetLength(0)||num2 >= matrix.GetLength(1)||num1 < 0 || num2 < 0)
-        Console.WriteLine("Incorrect index");
-    else 
-       Console.WriteLine($"{matrix[num1, num2]}");;
-   
+    int[] Sum = new int[matrix.GetLength(0)];
 
+    for(int i = 0; i < matrix.GetLength(0); i++)
+    {
+        Sum[i] = 0;
+        for(int j = 0; j < matrix.GetLength(1); j++)
+            Sum[i]+=matrix[i, j];
+    }
+    return Sum;
 }
-int I1, I2;
-int[,] matrix = CreateMatrix(5, 5);
+
+int FindMin(int[] Sum)
+{
+    int min = Sum[0], index = 0;
+    for(int i = 1; i < Sum.Length; i++)
+        if(min > Sum[i])
+        {
+            min = Sum[i];
+            index = i;
+        }
+    return index;
+}
+
+int[,] matrix = CreateMatrix(4, 6);
 
 for(int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -88,13 +103,9 @@ for(int i = 0; i < matrix.GetLength(0); i++)
     Console.WriteLine("");
     }
 
-Console.WriteLine("Enter the first index:");
-   I1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the k1:");
-   I2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Number of line with min element: {FindMin(LineSum(matrix)) + 1}");
 
-FindByIndex(I1, I2, matrix);
-*/
+
 //Задача 3
 /*
 int[,] CreateMatrix(int m, int n)
