@@ -107,7 +107,7 @@ Console.WriteLine($"Number of line with min element: {FindMin(LineSum(matrix)) +
 */
 
 //Задача 3
-
+/*
 int[,] CreateMatrix(int m, int n)
 {
     int[,] matrix = new int[m, n];
@@ -166,3 +166,42 @@ int[,] result = MatrixXmatrix(matrix1, matrix2);
         }
     Console.WriteLine("");
     }
+*/
+//Задача 4
+int CreateUnicNumber(int[,,] gigaMas)
+{
+    int num = new Random().Next(0, 100);;
+    for(int i = 0; i < gigaMas.GetLength(0); i++)
+        for(int j = 0; j < gigaMas.GetLength(1); j++)
+            for(int k = 0; k < gigaMas.GetLength(2); k++)
+                if(num == gigaMas[i, j, k])
+                    CreateUnicNumber(gigaMas);
+    return num;
+}
+int[,,] Create3DArray(int m, int n, int k)
+{
+    int[,,] gigaMas = new int[m, n, k];
+    for(int i = 0; i < gigaMas.GetLength(0); i++)
+        for(int j = 0; j < gigaMas.GetLength(1); j++)
+            for(int l = 0; l < gigaMas.GetLength(2); l++)
+           gigaMas[i, j, l] = CreateUnicNumber(gigaMas);
+    return gigaMas;
+}
+
+void Show3DArray(int[,,] gigaMas)
+{
+    for(int i = 0; i < gigaMas.GetLength(0); i++)
+    {    
+        for(int j = 0; j < gigaMas.GetLength(1); j++)
+        {  
+            for(int l = 0; l < gigaMas.GetLength(2); l++)
+                Console.Write($"{gigaMas[i, j, l]}({i}, {j}, {l}) ");
+            Console.WriteLine("");
+        }
+        Console.WriteLine("");
+    }
+    
+}
+int[,,] gigaMas = Create3DArray(3,3,3);
+
+Show3DArray(gigaMas);
