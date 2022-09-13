@@ -168,9 +168,10 @@ int[,] result = MatrixXmatrix(matrix1, matrix2);
     }
 */
 //Задача 4
+/*
 int CreateUnicNumber(int[,,] gigaMas)
 {
-    int num = new Random().Next(0, 100);;
+    int num = new Random().Next(0, 100);
     for(int i = 0; i < gigaMas.GetLength(0); i++)
         for(int j = 0; j < gigaMas.GetLength(1); j++)
             for(int k = 0; k < gigaMas.GetLength(2); k++)
@@ -205,3 +206,31 @@ void Show3DArray(int[,,] gigaMas)
 int[,,] gigaMas = Create3DArray(3,3,3);
 
 Show3DArray(gigaMas);
+*/
+//Задача 5
+/*
+int[,] CreateMatrix(int m, int n)
+{
+    int[,] matrix = new int[m, n];
+    int i = 1, j, k, p=n/2;
+    for(k = 1; k <= p; k++)
+    {
+        for (j = k - 1; j < n - k + 1; j++) matrix[k-1, j]=i++;
+        for (j = k; j < n - k + 1; j++) matrix[j, n-k]=i++;
+        for (j = n - k - 1; j >= k - 1; --j) matrix[n-k, j]=i++;
+        for (j = n - k - 1; j >= k; j--) matrix[j, k-1]=i++;
+    }
+    if (n%2==1) matrix[p, p] = n*n;
+    return matrix;
+}
+
+int[,] matrix = CreateMatrix(8, 8);
+    for(int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix.GetLength(1); j++)
+        {
+        Console.Write($"{matrix[i, j]} ");
+        }
+    Console.WriteLine("");
+    }
+*/
