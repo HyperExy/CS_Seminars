@@ -23,9 +23,9 @@ void ShowNNumbers(int m, int n)
         Console.Write(n + " ");
 }
 
-Console.WriteLine("Enter the size m:");
+Console.WriteLine("Enter the m:");
     int M = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the size n:");
+Console.WriteLine("Enter the n:");
     int N = Convert.ToInt32(Console.ReadLine());
 
 ShowNNumbers(M, N);
@@ -43,11 +43,30 @@ int ShowNNumbers(int m, int n)
 }
 
 
-Console.WriteLine("Enter the size m:");
+Console.WriteLine("Enter the m:");
     int M = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the size n:");
+Console.WriteLine("Enter the n:");
     int N = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine($"Sum = {ShowNNumbers(M, N)}");
 */
 //Задача 3
+/*
+int Akkerman(int n, int m)
+{
+  if (n == 0)
+    return m + 1;
+  else
+    if ((n != 0) && (m == 0))
+      return Akkerman(n - 1, 1);
+    else
+      return Akkerman(n - 1, Akkerman(n, m - 1));
+}
+
+Console.WriteLine("Enter the n:");
+    int N = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the m:");
+    int M = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine($"Akkerman = {Akkerman(N, M)}");
+*/
